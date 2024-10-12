@@ -1,0 +1,26 @@
+<%- include('partials/header.ejs') %>
+
+
+
+    <main class="container">
+        <% if (data.length > 0) { %>
+            <% for(i = 0;i <data.length;i++) { %>
+                <article class="post">
+                    <h2 class="italic font-bold font-mono text-2xl"><%= data[i].title %></h2>
+                    <p> by <strong><%= data[i].name %></strong> Posted on <time> <%= data[i].time %> </time></p>
+                    <p>
+                        <% const content = data[i].content %>
+                        <% const contentReview = content.slice(0,400) + "....."%>
+                        <%= contentReview %>
+                    </p>
+                    <a href="/post/<%= data[i].id %>" class="read-more">Read more</a>
+                    <% if(data[i].name === session_name) { %>
+                        <a href="/edit/<%= data[i].id %>" class="read-more">Edit</a>
+                    <% } %>
+                </article>
+            <% }; %>
+        <% } %>
+    </main>
+
+
+<%- include('partials/footer.ejs') %>

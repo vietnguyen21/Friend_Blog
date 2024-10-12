@@ -1,0 +1,20 @@
+<%- include('partials/header.ejs') %>
+<div class="flex flex-col">
+    <div class="container mt-12 justify-center items-center">
+        <h2 class="text-3xl">Submit a New Blog Post</h2>
+        <form action="/post" method="POST">
+            <div class="form-group">
+                <label for="title">Blog Title:</label><br>
+                <input type="text" id="title" name="title" placeholder="Enter title" class="rounded border-slate-900 border" required ><br>
+            </div>
+
+            <div class="form-group">
+                <label for="content">Blog Content:</label><br>
+                <textarea class="rounded border-slate-900 border" id="content" name="content" placeholder="Write your blog content here..." rows="10" cols="50" required></textarea><br><br>
+            </div>
+
+            <input type="submit" value="Submit" class="rounded border-slate-900 border">
+        </form>
+    </div>
+</div>
+<%- include('partials/footer.ejs') %>
