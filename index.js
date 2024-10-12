@@ -23,7 +23,7 @@ app.use(session({
 
 
 // Set MongoDB connection
-const dbURL = 'mongodb+srv://nguyentathoangviet:ZZDVOsJYVKCNcMGy@cluster0.b2itr.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0';
+const dbURL = process.env.MONGODB_URI;
 mongoose.connect(dbURL, { useNewUrlParser: true, useUnifiedTopology: true })
   .then(() => console.log('MongoDB connected...'))
   .catch((err) => console.log(err));
