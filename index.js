@@ -66,7 +66,6 @@ app.get("/register",(req,res)=>{
 
 app.post("/postLogin", (req, res) => {
   const email = req.body.email;
-  console.log(userInformation.findOne({ email: email }));
   userInformation.findOne({ email: email })
     .then((userInformation) => {
       if (!userInformation) {
